@@ -1,0 +1,25 @@
+diff -urN pppusage-0.2.5/etc/pppusagerc pppusage-0.2.5.patch/etc/pppusagerc
+--- pppusage-0.2.5/etc/pppusagerc	2003-09-27 18:12:01.000000000 +0200
++++ pppusage-0.2.5.patch/etc/pppusagerc	2004-08-12 18:12:15.904400312 +0200
+@@ -5,7 +5,7 @@
+ 
+ # set this to 1 (or delete it completely).
+ #
+-$configured = 0;
++$configured = 1;
+ 
+ # the syslog files to parse. use a space seperated list to
+ # specify multiple files. note that if you specify the files
+@@ -15,10 +15,10 @@
+ #
+ # For example: "/var/log/messages /var/log/messages.0.gz".
+ #
+-$logfiles = `ls /var/log/messages*`;
++$logfiles = `ls /var/log/ppp*`;
+ 
+ # the file that pppusage uses to store it's data. if your
+ # /tmp gets wiped out every now an then, you should set this
+ # to a different path.
+ #
+-$datafile = "/tmp/pppusage.db";
++$datafile = "/var/lib/pppusage/pppusage.db";
