@@ -1,0 +1,12 @@
+diff -urN pppusage-0.2.5/Makefile.PL pppusage-0.2.5.patch/Makefile.PL
+--- pppusage-0.2.5/Makefile.PL	2003-12-19 22:56:32.000000000 +0100
++++ pppusage-0.2.5.patch/Makefile.PL	2004-08-12 18:39:19.919512488 +0200
+@@ -107,7 +107,7 @@
+ 		bin/pppusage.raw > bin/pppusage
+ 
+ inst_conf: etc/pppusagerc
+-	test -f $(SYSCONFDIR)/pppusagerc || cp etc/pppusagerc $(SYSCONFDIR)/
++	test -f $(DESTDIR)$(SYSCONFDIR)/pppusagerc || cp etc/pppusagerc $(DESTDIR)$(SYSCONFDIR)/
+ 
+ clean_bin:
+ 	rm -f bin/pppusage
