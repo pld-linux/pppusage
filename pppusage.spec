@@ -8,7 +8,7 @@ Summary(pl):	Narzêdzie do tworzenia statystyk po³±czeñ PPP
 Name:		pppusage
 Version:	0.2.5
 Release:	2
-License:	BSD	
+License:	BSD
 Group:		Applications/Console
 Source0:	http://code.jhweiss.de/pppusage/%{name}-%{version}.tar.gz
 # Source0-md5:	7cf370d5b147ff084025234c43d01a45
