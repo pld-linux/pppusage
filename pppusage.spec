@@ -7,12 +7,14 @@ Summary:	Tool to create PPP connections summary
 Summary(pl):	Narzêdzie do tworzenia statystyk po³±czeñ PPP
 Name:		pppusage
 Version:	0.2.5
-Release:	1
+Release:	2
 License:	BSD	
 Group:		Applications/Console
 Source0:	http://code.jhweiss.de/pppusage/%{name}-%{version}.tar.gz
 # Source0-md5:	7cf370d5b147ff084025234c43d01a45
 URL:		http://code.jhweiss.de/pppusage/
+Patch0:		%{name}-config.patch
+Patch1:		%{name}-Makefile_PL.patch
 %if %{with tests}
 BuildRequires:	perl-DB_File
 %endif
@@ -38,12 +40,13 @@ linii poleceñ.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor \
-	SYSCONFDIR="%{_sysconfdir}" \
-	INST_SYSCONFDIR="$RPM_BUILD_ROOT%{_sysconfdir}"
+	SYSCONFDIR="%{_sysconfdir}"
 
 %{__make}
 
@@ -52,6 +55,7 @@ linii poleceñ.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}
+install -d $RPM_BUILD_ROOT/%{_var}/lib/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -66,3 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/PPPUsage
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}rc
 %{_mandir}/man1/%{name}.*
+%dir %{_var}/lib/%{name}
