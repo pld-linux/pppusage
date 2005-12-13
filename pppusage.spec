@@ -34,9 +34,9 @@ on the command line.
 pppusage podsumowuje wielko¶ci ¶redniego i ca³kowitego transferu,
 liczbê po³±czeñ oraz ¶redni i ca³kowity czas dla po³±czeñ PPP. Dane s±
 zbierane poprzez czytanie plików sysloga zawieraj±cych komunikaty
-ppp[d]. Do przechowywania danych u¿ywany jest plik z baz±.
-Okre¶lone przedzia³y czasu (tzn. rok, miesi±c, dzieñ) mo¿na podaæ z
-linii poleceñ.
+ppp[d]. Do przechowywania danych u¿ywany jest plik z baz±. Okre¶lone
+przedzia³y czasu (tzn. rok, miesi±c, dzieñ) mo¿na podaæ z linii
+poleceñ.
 
 %prep
 %setup -q
@@ -68,6 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes License README TODO UPGRADE
 %attr(755,root,root) %{_bindir}/*
 %{perl_vendorlib}/PPPUsage
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}rc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}rc
 %{_mandir}/man1/%{name}.*
 %dir %{_var}/lib/%{name}
