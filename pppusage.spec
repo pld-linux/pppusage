@@ -55,7 +55,7 @@ poleceñ.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}
-install -d $RPM_BUILD_ROOT/%{_var}/lib/%{name}
+install -d $RPM_BUILD_ROOT%{_var}/lib/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
