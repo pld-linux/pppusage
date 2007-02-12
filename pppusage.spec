@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Tool to create PPP connections summary
-Summary(pl):	Narzêdzie do tworzenia statystyk po³±czeñ PPP
+Summary(pl.UTF-8):   NarzÄ™dzie do tworzenia statystyk poÅ‚Ä…czeÅ„ PPP
 Name:		pppusage
 Version:	0.2.5
 Release:	2
@@ -30,13 +30,13 @@ ppp[d] messages. A database file is used to store the relevant data.
 Certain time ranges (that is: a year, month, or day) may be specified
 on the command line.
 
-%description -l pl
-pppusage podsumowuje wielko¶ci ¶redniego i ca³kowitego transferu,
-liczbê po³±czeñ oraz ¶redni i ca³kowity czas dla po³±czeñ PPP. Dane s±
-zbierane poprzez czytanie plików sysloga zawieraj±cych komunikaty
-ppp[d]. Do przechowywania danych u¿ywany jest plik z baz±. Okre¶lone
-przedzia³y czasu (tzn. rok, miesi±c, dzieñ) mo¿na podaæ z linii
-poleceñ.
+%description -l pl.UTF-8
+pppusage podsumowuje wielkoÅ›ci Å›redniego i caÅ‚kowitego transferu,
+liczbÄ™ poÅ‚Ä…czeÅ„ oraz Å›redni i caÅ‚kowity czas dla poÅ‚Ä…czeÅ„ PPP. Dane sÄ…
+zbierane poprzez czytanie plikÃ³w sysloga zawierajÄ…cych komunikaty
+ppp[d]. Do przechowywania danych uÅ¼ywany jest plik z bazÄ…. OkreÅ›lone
+przedziaÅ‚y czasu (tzn. rok, miesiÄ…c, dzieÅ„) moÅ¼na podaÄ‡ z linii
+poleceÅ„.
 
 %prep
 %setup -q
