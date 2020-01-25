@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	Tool to create PPP connections summary
 Summary(pl.UTF-8):	Narzędzie do tworzenia statystyk połączeń PPP
 Name:		pppusage
